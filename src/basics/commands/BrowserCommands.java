@@ -1,14 +1,14 @@
-package basics.browsers;
+package basics.commands;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
-public class ChromeTestCase {
+public class BrowserCommands {
 
 	public static void main(String[] args) {
 		
-		System.setProperty("webdriver.chrome.driver", "lib/chromedriver.exe");
+       System.setProperty("webdriver.chrome.driver", "lib/chromedriver.exe");
 		
 		ChromeOptions options=new ChromeOptions();
 		
@@ -20,8 +20,16 @@ public class ChromeTestCase {
 		
 		driver.get("http://www.google.com");
 		
-		//will close all the windows
-		driver.quit();
+		driver.manage().window().maximize();
+		
+		System.out.println(driver.getTitle());
+		
+		System.out.println(driver.getCurrentUrl());
+		
+		driver.getPageSource();
+		
+		driver.quit();//or driver.close()
+		
 	}
 
 }

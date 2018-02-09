@@ -1,10 +1,10 @@
-package basics.browsers;
+package basics.commands;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
-public class ChromeTestCase {
+public class NavigationCommands {
 
 	public static void main(String[] args) {
 		
@@ -20,8 +20,18 @@ public class ChromeTestCase {
 		
 		driver.get("http://www.google.com");
 		
-		//will close all the windows
+		driver.manage().window().maximize();
+		
+		driver.navigate().to("http://www.DemoQA.com");
+		
+		driver.navigate().back();
+		
+		driver.navigate().forward();
+		
+		driver.navigate().refresh();
+		
 		driver.quit();
+
 	}
 
 }
